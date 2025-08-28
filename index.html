@@ -4,24 +4,61 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Sajin Mahmud Arpon – CSE Student | Machine Learning | NLP | Computer Vision" />
+    <meta name="description" content="Sajin Mahmud Arpon — CSE Student | Machine Learning | NLP | Computer Vision" />
     <title>Sajin Mahmud Arpon | Portfolio</title>
     <link
-        href="https://fonts.googleapis.com/css2?family=Freight+Display+Pro:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="design.css" />
+    <link rel="stylesheet" href="design.css">
 </head>
 
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-text">Initializing Portfolio</div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Grid Overlay -->
+    <div class="grid-overlay"></div>
+
     <!-- Night Sky Canvas -->
     <canvas id="particle-canvas"></canvas>
 
     <header>
         <h1>Sajin Mahmud Arpon</h1>
-        <p>CSE Student | Machine Learning | NLP | Computer Vision</p>
+        <p><span class="tech-accent">CSE Student | Machine Learning | NLP | Computer Vision</span></p>
+        <div class="status-indicator">
+            <div class="status-dot"></div>
+            Available for Internship Opportunities
+        </div>
     </header>
 
     <div class="main-container">
+        <!-- Metrics Section -->
+        <section class="fade-in-up">
+            <div class="metric-card">
+                <div class="metric-item">
+                    <div class="metric-number">11th</div>
+                    <div class="metric-label">Current Semester</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">3.52</div>
+                    <div class="metric-label">CGPA / 4.00</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">7+</div>
+                    <div class="metric-label">Project Count</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">2026</div>
+                    <div class="metric-label">Expected Graduation</div>
+                </div>
+            </div>
+        </section>
+
         <!-- About Section -->
         <section class="fade-in-up about-section">
             <div class="about-left">
@@ -31,13 +68,20 @@
             </div>
             <div class="about-right">
                 <h2>About Me</h2>
-                <div class="glass-card">
+                <div class="skill-category">
                     <p>I am currently in my 11th semester studying Computer Science and Engineering, majoring in
                         Information Systems. I am actively seeking internship opportunities to apply my skills in
                         real-world settings and grow as a developer and researcher.</p>
                     <p>My passion lies in machine learning, natural language processing, and computer vision. I am
                         working on multiple projects with the goal of presenting them at academic conferences. I thrive
                         on solving complex problems and turning ideas into impactful solutions.</p>
+                    <div class="code-block">
+                        <span style="color: #1f7a8c;">const</span> <span style="color: #bfdbf7;">passions</span> = [<br>
+                        &nbsp;&nbsp;<span style="color: #e1e5f2;">"Machine Learning"</span>,<br>
+                        &nbsp;&nbsp;<span style="color: #e1e5f2;">"Natural Language Processing"</span>,<br>
+                        &nbsp;&nbsp;<span style="color: #e1e5f2;">"Computer Vision"</span><br>
+                        ];
+                    </div>
                 </div>
             </div>
         </section>
@@ -48,19 +92,19 @@
             <div class="glass-card education-card">
                 <div class="edu-title">Bachelor of Science in Computer Science and Engineering</div>
                 <div class="edu-year">Expected Graduation: 2026</div>
-                <div class="CGPA">CGPA: 3.52 out of 4.00 </div>
+                <div class="CGPA">CGPA: 3.52 out of 4.00</div>
                 <div class="edu-subtitle">American International University-Bangladesh</div>
             </div>
             <div class="glass-card education-card">
                 <div class="edu-title">Higher Secondary Certificate</div>
                 <div class="edu-year">Completed: 2020</div>
-                <div class="CGPA">GPA: 5.00 out of 5.00 </div>
+                <div class="CGPA">GPA: 5.00 out of 5.00</div>
                 <div class="edu-subtitle">Abdul Kadir Molla City College, Narsingdi</div>
             </div>
             <div class="glass-card education-card">
                 <div class="edu-title">Secondary School Certificate</div>
                 <div class="edu-year">Completed: 2018</div>
-                <div class="CGPA">GPA: 5.00 out of 5.00 </div>
+                <div class="CGPA">GPA: 5.00 out of 5.00</div>
                 <div class="edu-subtitle">Kamalpur Hazi Jahir Uddin High School, Bhairab</div>
             </div>
         </section>
@@ -71,10 +115,9 @@
             <div class="glass-card project-card">
                 <div class="project-title">Applying Zero-Shot for Combating Misinformation</div>
                 <div class="project-desc">Implemented zero-shot fake news detection using transformer models like
-                    DeBERTa and BART on a Kaggle dataset. Achieved
-                    strong performance with ensemble methods, highlighting Majority Voting and DeBERTa as effective
-                    tools for reliable
-                    content classification</div>
+                    DeBERTa and BART on a Kaggle dataset. Achieved strong performance with ensemble methods,
+                    highlighting Majority Voting and DeBERTa as effective tools for reliable content classification
+                </div>
                 <a href="https://github.com/sajin-mahmud-arpon/Applying-Zero-Shot-for-Combating-Misinformation"
                     class="crystal-btn">View Project on GitHub</a>
             </div>
@@ -84,50 +127,37 @@
                     ethnic languages of Bangladesh, contributing to digital preservation of linguistic diversity and
                     cultural heritage.</div>
                 <a href="https://github.com/sajin-mahmud-arpon/Bangladesh-Ethnic-Language-Recognition"
-                    class="crystal-btn">View
-                    Project
-                    on GitHub</a>
+                    class="crystal-btn">View Project on GitHub</a>
             </div>
             <div class="glass-card project-card">
                 <div class="project-title">NLP-Based Sentiment and Topic Analysis of Anime Reviews</div>
                 <div class="project-desc">Executed an NLP project in R to analyze 200 MyAnimeList reviews using LDA
-                    topic modeling and NRC sentiment lexicon.
-                    Revealed genre-specific emotional trends and audience engagement patterns through statistical
-                    modeling and text mining
-                    techniques.
-                </div>
+                    topic modeling and NRC sentiment lexicon. Revealed genre-specific emotional trends and audience
+                    engagement patterns through statistical modeling and text mining techniques.</div>
                 <a href="https://github.com/sajin-mahmud-arpon/NLP-Based-Sentiment-and-Topic-Analysis-of-Anime-Reviews"
                     class="crystal-btn">View Project on Github</a>
             </div>
             <div class="glass-card project-card">
                 <div class="project-title">Library Management Web Application</div>
                 <div class="project-desc">Built a full-stack library management system using PHP and CSS, featuring user
-                    authentication, book tracking, and due
-                    date monitoring. Includes a responsive interface, reservation system, and admin dashboard for
-                    managing borrow
-                    history
-                    and catalog updates.
-                </div>
+                    authentication, book tracking, and due date monitoring. Includes a responsive interface, reservation
+                    system, and admin dashboard for managing borrow history and catalog updates.</div>
                 <a href="https://github.com/sajin-mahmud-arpon/LibraryWebApp" class="crystal-btn">View Project on
                     Github</a>
             </div>
             <div class="glass-card project-card">
                 <div class="project-title">Skin Disease Prediction</div>
                 <div class="project-desc">Developed a deep learning model using TensorFlow to classify Atopic Dermatitis
-                    and Tinea infections from skin images.
-                    Implemented data augmentation, trained with early stopping, and visualized performance using
-                    confusion matrix analysis.
-                </div>
+                    and Tinea infections from skin images. Implemented data augmentation, trained with early stopping,
+                    and visualized performance using confusion matrix analysis.</div>
                 <a href="https://github.com/sajin-mahmud-arpon/Skin-diseases-Prediction/tree/main"
                     class="crystal-btn">View Project on Github</a>
             </div>
             <div class="glass-card project-card">
                 <div class="project-title">IoT based System for Heart Rate Monitoring</div>
                 <div class="project-desc">Designed an IoT-based fingertip heart rate monitoring system using Arduino,
-                    ESP8266, OLED display, and
-                    photoplethysmography. Enables real-time BPM tracking, wireless data transmission, and remote health
-                    monitoring for
-                    telemedicine and clinical research applications.
+                    ESP8266, OLED display, and photoplethysmography. Enables real-time BPM tracking, wireless data
+                    transmission, and remote health monitoring for telemedicine and clinical research applications.
                 </div>
                 <a href="https://github.com/sajin-mahmud-arpon/Microprocessor-Embedded-System" class="crystal-btn">View
                     Project on Github</a>
@@ -135,13 +165,11 @@
             <div class="glass-card project-card">
                 <div class="project-title">Anyone for Tennis</div>
                 <div class="project-desc">Developed a C# Windows Forms application for tennis club management,
-                    integrating coach, schedule, and membership
-                    databases. Features role-based access, mobile-friendly design, and real-time scheduling, profile
-                    editing, and member
-                    enrollment for streamlined operations.
+                    integrating coach, schedule, and membership databases. Features role-based access, mobile-friendly
+                    design, and real-time scheduling, profile editing, and member enrollment for streamlined operations.
                 </div>
-                <a href="https://github.com/sajin-mahmud-arpon/Anyone-For-Tennis" class="crystal-btn">View
-                    Project on Github</a>
+                <a href="https://github.com/sajin-mahmud-arpon/Anyone-For-Tennis" class="crystal-btn">View Project on
+                    Github</a>
             </div>
         </section>
 
@@ -152,132 +180,103 @@
                 <div class="skill-category">
                     <h3>Programming Languages</h3>
                     <ul class="skill-list">
-                        <li><strong>Python</strong> – Versatile scripting language used for data science, machine
-                            learning, and web development
-                        </li>
-                        <li><strong>NumPy</strong> – Efficient numerical computing and array manipulation in Python</li>
-                        <li><strong>TensorFlow</strong> – Deep learning framework for building and training neural
+                        <li><strong>Python</strong> — Versatile scripting language used for data science, machine
+                            learning, and web development</li>
+                        <li><strong>NumPy</strong> — Efficient numerical computing and array manipulation in Python</li>
+                        <li><strong>TensorFlow</strong> — Deep learning framework for building and training neural
                             networks</li>
-                        <li><strong>Seaborn</strong> – Statistical data visualization built on top of Matplotlib</li>
-                        <li><strong>Matplotlib</strong> – Foundational plotting library for visualizing data in Python
+                        <li><strong>Seaborn</strong> — Statistical data visualization built on top of Matplotlib</li>
+                        <li><strong>Matplotlib</strong> — Foundational plotting library for visualizing data in Python
                         </li>
-                        <li><strong>Keras</strong> – High-level neural network API running on top of TensorFlow, used
-                            for fast prototyping and
-                            deep learning model development</li>
-                        <li><strong>R</strong> – Specialized language for statistical computing, data visualization, and
-                            natural language
-                            processing tasks</li>
-                        <li><strong>C#</strong> – Powerful language for building Windows applications, games, and
-                            backend services with .NET
-                        </li>
-                        <li><strong>Java</strong> – Robust, object-oriented language ideal for cross-platform
-                            applications and enterprise
-                            systems</li>
-                        <li><strong>C++</strong> – High-performance language suited for system-level programming,
-                            embedded systems, and game
-                            development</li>
+                        <li><strong>Keras</strong> — High-level neural network API running on top of TensorFlow, used
+                            for fast prototyping and deep learning model development</li>
+                        <li><strong>R</strong> — Specialized language for statistical computing, data visualization, and
+                            natural language processing tasks</li>
+                        <li><strong>C#</strong> — Powerful language for building Windows applications, games, and
+                            backend services with .NET</li>
+                        <li><strong>Java</strong> — Robust, object-oriented language ideal for cross-platform
+                            applications and enterprise systems</li>
+                        <li><strong>C++</strong> — High-performance language suited for system-level programming,
+                            embedded systems, and game development</li>
                     </ul>
                 </div>
                 <div class="skill-category">
                     <h3>Web Technologies</h3>
                     <ul class="skill-list">
-                        <li><strong>HTML5</strong> – Markup language for structuring web content with modern semantic
+                        <li><strong>HTML5</strong> — Markup language for structuring web content with modern semantic
                             elements</li>
-                        <li><strong>CSS3</strong> – Styling language for designing responsive, visually appealing web
+                        <li><strong>CSS3</strong> — Styling language for designing responsive, visually appealing web
                             interfaces</li>
-                        <li><strong>PHP</strong> – Server-side scripting language for dynamic web development and
+                        <li><strong>PHP</strong> — Server-side scripting language for dynamic web development and
                             backend integration</li>
                     </ul>
                 </div>
                 <div class="skill-category">
                     <h3>Tools & Platforms</h3>
                     <ul class="skill-list">
-                        <li><strong>VS Code</strong> – Lightweight, extensible code editor ideal for web, Python, and
-                            full-stack development
-                        </li>
-                        <li><strong>Google Colab</strong> – Cloud-based Python notebook for machine learning, data
-                            analysis, and
-                            collaborative research</li>
-                        <li><strong>RStudio</strong> – Integrated development environment for R, used in statistical
-                            computing, data analysis,
-                            and visualization</li>
-                        <li><strong>Overleaf</strong> – Online LaTeX editor for collaborative academic writing, research
-                            papers, and technical
-                            documentation</li>
-                        <li><strong>LaTeX</strong> – Typesetting system for producing high-quality scientific and
-                            mathematical documents with
-                            precise formatting</li>
-                        <li><strong>Git & GitHub</strong> – Version control and collaborative code hosting for
-                            streamlined development
-                            workflows</li>
-                        <li><strong>GitLab</strong> – DevOps platform for source control, CI/CD pipelines, and project
+                        <li><strong>VS Code</strong> — Lightweight, extensible code editor ideal for web, Python, and
+                            full-stack development</li>
+                        <li><strong>Google Colab</strong> — Cloud-based Python notebook for machine learning, data
+                            analysis, and collaborative research</li>
+                        <li><strong>RStudio</strong> — Integrated development environment for R, used in statistical
+                            computing, data analysis, and visualization</li>
+                        <li><strong>Overleaf</strong> — Online LaTeX editor for collaborative academic writing, research
+                            papers, and technical documentation</li>
+                        <li><strong>LaTeX</strong> — Typesetting system for producing high-quality scientific and
+                            mathematical documents with precise formatting</li>
+                        <li><strong>Git & GitHub</strong> — Version control and collaborative code hosting for
+                            streamlined development workflows</li>
+                        <li><strong>GitLab</strong> — DevOps platform for source control, CI/CD pipelines, and project
                             management</li>
-                        <li><strong>Arduino IDE</strong> – Development environment for programming microcontrollers and
-                            embedded systems
-                        </li>
-                        <li><strong>Visual Studio</strong> – Comprehensive IDE for building desktop, web, and enterprise
-                            applications with
-                            .NET and C#</li>
+                        <li><strong>Arduino IDE</strong> — Development environment for programming microcontrollers and
+                            embedded systems</li>
+                        <li><strong>Visual Studio</strong> — Comprehensive IDE for building desktop, web, and enterprise
+                            applications with .NET and C#</li>
                     </ul>
                 </div>
                 <div class="skill-category">
                     <h3>Data Science & ML</h3>
                     <ul class="skill-list">
-                        <li><strong>Machine Learning</strong> – Building predictive models from data using supervised,
-                            unsupervised, and
-                            reinforcement learning methods</li>
-                        <li><strong>Natural Language Processing</strong> – Techniques for analyzing and understanding
-                            human language using
-                            machine learning</li>
-                        <li><strong>Computer Vision & Pattern Recognition</strong> – Algorithms and models for
-                            interpreting visual data from images and videos
-                        </li>
-                        <li><strong>Knowledge Distillation</strong> – Model compression technique that transfers
-                            knowledge from a large
-                            model to a smaller one</li>
-                        <li><strong>Zero-Shot Classification</strong> – NLP method that enables text classification
-                            without labeled training
-                            data using pre-trained models</li>
-                        <li><strong>RStudio</strong> – Integrated development environment for R, used in statistical
-                            computing and data
-                            visualization</li>
+                        <li><strong>Machine Learning</strong> — Building predictive models from data using supervised,
+                            unsupervised, and reinforcement learning methods</li>
+                        <li><strong>Natural Language Processing</strong> — Techniques for analyzing and understanding
+                            human language using machine learning</li>
+                        <li><strong>Computer Vision & Pattern Recognition</strong> — Algorithms and models for
+                            interpreting visual data from images and videos</li>
+                        <li><strong>Knowledge Distillation</strong> — Model compression technique that transfers
+                            knowledge from a large model to a smaller one</li>
+                        <li><strong>Zero-Shot Classification</strong> — NLP method that enables text classification
+                            without labeled training data using pre-trained models</li>
+                        <li><strong>RStudio</strong> — Integrated development environment for R, used in statistical
+                            computing and data visualization</li>
                     </ul>
                 </div>
                 <div class="skill-category">
                     <h3>Hardware & Embedded</h3>
                     <ul class="skill-list">
-                        <li><strong>Arduino UNO/Nano</strong> – Microcontroller boards used for building embedded
-                            systems and sensor-based
-                            IoT projects</li>
-                        <li><strong>ESP32</strong> – Powerful microcontroller with built-in Wi-Fi and Bluetooth, ideal
-                            for advanced IoT and
-                            edge computing applications</li>
-                        <li><strong>Raspberry Pi</strong> – Compact single-board computer ideal for prototyping,
-                            automation, and edge
-                            computing applications</li>
-                        <li><strong>L298N Motor Driver</strong> – Dual H-Bridge motor driver module used to control DC
-                            and stepper motors in
-                            robotics and automation</li>
-                        <li><strong>IoT Development</strong> – Designing and implementing smart systems that connect
-                            devices, sensors, and
-                            cloud platforms for real-time data exchange</li>
+                        <li><strong>Arduino UNO/Nano</strong> — Microcontroller boards used for building embedded
+                            systems and sensor-based IoT projects</li>
+                        <li><strong>ESP32</strong> — Powerful microcontroller with built-in Wi-Fi and Bluetooth, ideal
+                            for advanced IoT and edge computing applications</li>
+                        <li><strong>Raspberry Pi</strong> — Compact single-board computer ideal for prototyping,
+                            automation, and edge computing applications</li>
+                        <li><strong>L298N Motor Driver</strong> — Dual H-Bridge motor driver module used to control DC
+                            and stepper motors in robotics and automation</li>
+                        <li><strong>IoT Development</strong> — Designing and implementing smart systems that connect
+                            devices, sensors, and cloud platforms for real-time data exchange</li>
                     </ul>
                 </div>
                 <div class="skill-category">
                     <h3>Design & Graphics</h3>
                     <ul class="skill-list">
-                        <li><strong>Adobe Photoshop</strong> – Industry-standard tool for image editing, graphic design,
-                            and digital artwork
-                        </li>
-                        <li><strong>Adobe Lightroom</strong> – Photo editing and management software for enhancing and
-                            organizing visual
-                            content</li>
-                        <li><strong>Adobe Illustrator</strong> – Vector graphics editor used for creating logos,
-                            illustrations, and scalable
-                            designs</li>
-                        <li><strong>Adobe Premiere Pro</strong> – Professional video editing software for producing
-                            high-quality content
-                            with advanced timeline and effects</li>
+                        <li><strong>Adobe Photoshop</strong> — Industry-standard tool for image editing, graphic design,
+                            and digital artwork</li>
+                        <li><strong>Adobe Lightroom</strong> — Photo editing and management software for enhancing and
+                            organizing visual content</li>
+                        <li><strong>Adobe Illustrator</strong> — Vector graphics editor used for creating logos,
+                            illustrations, and scalable designs</li>
+                        <li><strong>Adobe Premiere Pro</strong> — Professional video editing software for producing
+                            high-quality content with advanced timeline and effects</li>
                     </ul>
                 </div>
             </div>
@@ -290,34 +289,27 @@
                 <div class="skill-category">
                     <h3>Soft Skills</h3>
                     <ul class="skill-list">
-                        <li><strong>Effective Communication</strong> – Clearly conveying ideas and information across
-                            technical and
-                            non-technical audiences</li>
-                        <li><strong>Team Collaboration</strong> – Working productively with diverse teams to achieve
-                            shared goals and
-                            deliver successful outcomes</li>
-                        <li><strong>Complex Problem Solving</strong> – Analyzing multifaceted challenges and developing
-                            innovative,
-                            data-driven solutions</li>
-                        <li><strong>Critical Thinking</strong> – Evaluating information objectively to make informed
-                            decisions and improve
-                            project strategies</li>
-                        <li><strong>Project Management</strong> – Planning, organizing, and executing tasks efficiently
-                            to meet deadlines
-                            and ensure quality delivery</li>
+                        <li><strong>Effective Communication</strong> — Clearly conveying ideas and information across
+                            technical and non-technical audiences</li>
+                        <li><strong>Team Collaboration</strong> — Working productively with diverse teams to achieve
+                            shared goals and deliver successful outcomes</li>
+                        <li><strong>Complex Problem Solving</strong> — Analyzing multifaceted challenges and developing
+                            innovative, data-driven solutions</li>
+                        <li><strong>Critical Thinking</strong> — Evaluating information objectively to make informed
+                            decisions and improve project strategies</li>
+                        <li><strong>Project Management</strong> — Planning, organizing, and executing tasks efficiently
+                            to meet deadlines and ensure quality delivery</li>
                     </ul>
                 </div>
                 <div class="skill-category">
                     <h3>Languages</h3>
                     <ul class="skill-list">
-                        <li><strong>Bengali (Native)</strong> – Fluent in reading, writing, and speaking Bengali as a
+                        <li><strong>Bengali (Native)</strong> — Fluent in reading, writing, and speaking Bengali as a
                             first language</li>
-                        <li><strong>English (Intermediate)</strong> – Capable of professional communication, reading
-                            technical
-                            documentation, and writing project summaries</li>
-                        <li><strong>Hindi (Conversational)</strong> – Able to engage in everyday conversations and
-                            understand spoken Hindi
-                            in informal settings</li>
+                        <li><strong>English (Intermediate)</strong> — Capable of professional communication, reading
+                            technical documentation, and writing project summaries</li>
+                        <li><strong>Hindi (Conversational)</strong> — Able to engage in everyday conversations and
+                            understand spoken Hindi in informal settings</li>
                     </ul>
                 </div>
             </div>
@@ -326,29 +318,32 @@
         <!-- Contact -->
         <section class="fade-in-up">
             <h2>Contact</h2>
-            <div class="contact-info">
-                <p>
-                    <strong>Email:</strong> <a href="mailto:sm.arpon2002@outlook.com">sm.arpon2002@outlook.com</a><br />
-                    <strong>Phone:</strong> <a href="tel:+8801739996694">01739996694</a><br />
-                    <strong>Address:</strong> <a
-                        href="https://www.google.com/maps/search/?api=1&query=Dhaka,+Bangladesh" target="_blank">Dhaka,
-                        Bangladesh</a>
-                </p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/sajin-mahmud-arpon/">LinkedIn</a>
-                    <a href="https://www.instagram.com/sajin.arpon.927?igsh=MXJrdnA0ODgzeTh0eQ==">Instagram</a>
-                    <a href="https://www.facebook.com/share/1ZfMBjpH1x/">Facebook</a>
-                    <a href="https://x.com/sajin_arpon_927?t=i3-Bu9ggeQW-j-twg3w_lQ&s=09">Twitter</a>
-                    <a href="https://www.threads.com/@sajin.arpon.927">Threads</a>
-                    <a href="https://github.com/sajin-mahmud-arpon">GitHub</a>
+            <div class="glass-card">
+                <div class="contact-info">
+                    <p>
+                        <strong>Email:</strong> <a
+                            href="mailto:sm.arpon2002@outlook.com">sm.arpon2002@outlook.com</a><br />
+                        <strong>Phone:</strong> <a href="tel:+8801739996694">01739996694</a><br />
+                        <strong>Address:</strong> <a
+                            href="https://www.google.com/maps/search/?api=1&query=Dhaka,+Bangladesh"
+                            target="_blank">Dhaka, Bangladesh</a>
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/sajin-mahmud-arpon/">LinkedIn</a>
+                        <a href="https://www.instagram.com/sajin.arpon.927?igsh=MXJrdnA0ODgzeTh0eQ==">Instagram</a>
+                        <a href="https://www.facebook.com/share/1ZfMBjpH1x/">Facebook</a>
+                        <a href="https://x.com/sajin_arpon_927?t=i3-Bu9ggeQW-j-twg3w_lQ&s=09">Twitter</a>
+                        <a href="https://www.threads.com/@sajin.arpon.927">Threads</a>
+                        <a href="https://github.com/sajin-mahmud-arpon">GitHub</a>
+                    </div>
+                    <a href="Sajin_Mahmud_Arpon_CV.pdf" download class="download-btn">Download CV</a>
                 </div>
-                <a href="Sajin_Mahmud_Arpon_CV.pdf" download class="crystal-btn">Download CV</a>
             </div>
         </section>
     </div>
 
     <footer>
-        <p>© 2025 Sajin Mahmud Arpon. Crafted with passion and precision.</p>
+        <p>© 2025 <span class="tech-accent">Sajin Mahmud Arpon</span>. Crafted with passion and precision.</p>
     </footer>
 
     <script src="script.js"></script>
