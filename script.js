@@ -51,9 +51,7 @@ class Star {
 
 // ===== Meteor Class =====
 class Meteor {
-  constructor() {
-    this.reset();
-  }
+  constructor() { this.reset(); }
   reset() {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * -canvas.height;
@@ -109,7 +107,7 @@ class Planet {
   }
 }
 
-// ===== Initialize Elements =====
+// ===== Initialize Night Sky =====
 function initNightSky() {
   stars = [];
   meteors = [];
