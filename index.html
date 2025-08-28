@@ -4,116 +4,152 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Sajin Mahmud Arpon – CSE Student | Machine Learning | NLP | Computer Vision" />
-  <meta name="keywords" content="Sajin Mahmud, GitHub, Data Science, Machine Learning, NLP, Computer Vision, Bangladesh" />
-  <meta name="author" content="Sajin Mahmud Arpon" />
   <title>Sajin Mahmud Arpon | Portfolio</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
+    :root {
+      --dark-green: #002500;
+      --moss-green: #929982;
+      --desert-sand: #edcbb1;
+      --rose-red: #b7245c;
+      --wine: #7c3238;
     }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--desert-sand);
+      color: var(--dark-green);
+    }
+
     header {
-      background: #222;
-      color: #fff;
+      background-color: var(--dark-green);
+      color: var(--desert-sand);
       padding: 2rem;
       text-align: center;
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
     section {
-      padding: 2rem;
       max-width: 900px;
       margin: auto;
+      padding: 2rem;
     }
-    h1, h2 {
-      color: #444;
+
+    h2 {
+      color: var(--wine);
+      border-bottom: 2px solid var(--rose-red);
+      padding-bottom: 0.3rem;
+      margin-top: 2rem;
     }
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
+
     ul {
       list-style: none;
       padding-left: 0;
     }
+
     li {
       margin-bottom: 1rem;
     }
+
+    a {
+      color: var(--rose-red);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: var(--rose-red);
+      color: var(--desert-sand);
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    .button:hover {
+      background-color: var(--wine);
+    }
+
     footer {
+      background-color: var(--dark-green);
+      color: var(--desert-sand);
       text-align: center;
       padding: 1rem;
-      background: #222;
-      color: #ccc;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>👋 Hi, I'm Sajin Mahmud Arpon</h1>
+    <h1>Sajin Mahmud Arpon</h1>
     <p>CSE Student | Machine Learning | NLP | Computer Vision</p>
   </header>
 
   <section>
-    <h2>🧠 About Me</h2>
-    <p>I'm currently in my 11th semester studying Computer Science and Engineering, majoring in Information Systems. I'm actively seeking internship opportunities to apply my skills in real-world settings and grow as a developer and researcher.</p>
-    <p>My passion lies in machine learning, natural language processing, and computer vision. I'm currently working on multiple projects with the goal of presenting them at academic conferences. I thrive on solving complex problems and turning ideas into impactful solutions.</p>
+    <h2>About Me</h2>
+    <p>I am currently in my 11th semester studying Computer Science and Engineering, majoring in Information Systems. I am actively seeking internship opportunities to apply my skills in real-world settings and grow as a developer and researcher.</p>
+    <p>My passion lies in machine learning, natural language processing, and computer vision. I am working on multiple projects with the goal of presenting them at academic conferences. I thrive on solving complex problems and turning ideas into impactful solutions.</p>
 
-    <h2>📂 Projects</h2>
+    <h2>Projects</h2>
     <ul>
-      <li>
-        <strong>Zero-Shot Learning for Fake News Detection</strong><br />
-        Applied zero-shot techniques to classify misinformation using expert-labeled datasets.<br />
+      <li><strong>Zero-Shot Learning for Fake News Detection</strong><br />
         <a href="https://github.com/sajin2002/Applying-Zero-Shot-for-Combating-Misinformation">View on GitHub</a>
       </li>
-      <li>
-        <strong>Bangladesh Ethnic Language Recognition</strong><br />
-        CNN-based classification of tribal languages like Chakma, Marma, and Santali.<br />
+      <li><strong>Bangladesh Ethnic Language Recognition</strong><br />
         <a href="https://github.com/sajin2002/Bangladesh-Ethnic-Language-Recognition">View on GitHub</a>
       </li>
-      <li>
-        <strong>Anyone For Tennis</strong><br />
+      <li><strong>Anyone For Tennis</strong><br />
         <a href="#">Click here to view the file</a>
       </li>
-      <li>
-        <strong>Library Web App</strong><br />
+      <li><strong>Library Web App</strong><br />
         <a href="#">Click here to view the file</a>
       </li>
-      <li>
-        <strong>Heart Rate Monitoring (R)</strong><br />
+      <li><strong>Heart Rate Monitoring (R)</strong><br />
         <a href="#">Click here to view the file</a>
       </li>
     </ul>
 
-    <h2>🛠️ Technical Skills</h2>
+    <h2>Technical Skills</h2>
     <ul>
-      <li><strong>Programming Languages:</strong> C#, Python, Java, R, C++</li>
-      <li><strong>Frameworks & Libraries:</strong> .NET, Java Swing, ArduinoJson, WifiManager, Blynk</li>
-      <li><strong>Tools & Platforms:</strong> Visual Studio, VS Code, NetBeans, Arduino IDE, RStudio, Git, GitHub, GitLab</li>
-      <li><strong>Web Development:</strong> HTML5, CSS3, PHP</li>
-      <li><strong>Database:</strong> MySQL, MSQL, SQL (Queries, Optimization, ERD Design)</li>
-      <li><strong>Embedded Systems:</strong> Arduino UNO/Nano, Raspberry Pi</li>
-      <li><strong>Graphics & Photography:</strong> Photoshop, Lightroom, Illustrator, Canon M50 Mark II</li>
+      <li><strong>Programming:</strong> C#, Python, Java, R, C++</li>
+      <li><strong>Web:</strong> HTML5, CSS3, PHP</li>
+      <li><strong>Tools:</strong> Git, GitHub, GitLab, VS Code, NetBeans, Arduino IDE</li>
+      <li><strong>Embedded:</strong> Arduino UNO/Nano, Raspberry Pi</li>
+      <li><strong>Data Science:</strong> RStudio, Python, Knowledge Distillation, NLP, CV</li>
+      <li><strong>Graphics:</strong> Photoshop, Lightroom, Illustrator</li>
     </ul>
 
-    <h2>💡 Soft Skills</h2>
+    <h2>Soft Skills</h2>
     <ul>
-      <li><strong>Communication:</strong> Clear, respectful, and collaborative</li>
-      <li><strong>Teamwork:</strong> Thrives in diverse teams and values shared growth</li>
-      <li><strong>Problem Solving:</strong> Strategic, calm, and creative under pressure</li>
+      <li>Communication</li>
+      <li>Teamwork</li>
+      <li>Problem Solving</li>
     </ul>
 
-    <h2>🌐 Languages</h2>
+    <h2>Languages</h2>
     <ul>
       <li>Bengali (Native)</li>
       <li>English (Intermediate)</li>
-      <li>Hindi (Conversational – listening and speaking)</li>
+      <li>Hindi (Conversational)</li>
     </ul>
 
-    <h2>📬 Contact</h2>
+    <h2>Contact</h2>
     <p>
       <strong>Email:</strong> [Your Email Here]<br />
-      <strong>Google Sites:</strong> [Your Site Link]<br />
       <strong>Phone:</strong> [Your Number]<br />
       <strong>Address:</strong> [Your Address]<br />
       <strong>Socials:</strong><br />
@@ -124,6 +160,9 @@
       <a href="#">Threads</a> |
       <a href="https://github.com/sajin2002">GitHub</a>
     </p>
+
+    <h2>Download My CV</h2>
+    <a href="Sajin_Mahmud_Arpon_CV.pdf" download class="button">Download CV</a>
   </section>
 
   <footer>
