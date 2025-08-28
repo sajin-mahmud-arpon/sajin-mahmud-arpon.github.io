@@ -1,245 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Sajin Mahmud Arpon – CSE Student | Machine Learning | NLP | Computer Vision" />
-  <title>Sajin Mahmud Arpon | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Freight+Display+Pro:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="design.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sajin Mahmud - Portfolio</title>
+  <link rel="stylesheet" href="design.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="bg-animation"></div>
-  
-  <header>
-    <h1>Sajin Mahmud Arpon</h1>
-    <p>CSE Student | Machine Learning | NLP | Computer Vision</p>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Sajin<span>Mahmud</span></div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <div class="main-container">
-    <section class="fade-in-up">
-      <h2>About Me</h2>
-      <div class="glass-card">
-        <p>I am currently in my 11th semester studying Computer Science and Engineering, majoring in Information Systems. I am actively seeking internship opportunities to apply my skills in real-world settings and grow as a developer and researcher.</p>
-        <p>My passion lies in machine learning, natural language processing, and computer vision. I am working on multiple projects with the goal of presenting them at academic conferences. I thrive on solving complex problems and turning ideas into impactful solutions.</p>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Hi, I’m <span class="highlight">Sajin Mahmud</span></h1>
+      <p>Aspiring Computer Science Engineer | Machine Learning & Data Science Enthusiast</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I am an individual driven by curiosity and passion for learning, currently pursuing my Computer Science and Engineering degree with a major in Information Systems. My focus includes Data Science, Machine Learning, Deep Learning, Human Computer Interaction, and Data Warehousing. I am actively working on research projects and conference papers in these areas.</p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div class="skill-grid">
+      <div class="skill-card">Machine Learning</div>
+      <div class="skill-card">Deep Learning</div>
+      <div class="skill-card">Data Science</div>
+      <div class="skill-card">Data Mining</div>
+      <div class="skill-card">Human Computer Interaction</div>
+      <div class="skill-card">Python, TensorFlow, PyTorch</div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Brain Tumor Detection</h3>
+        <p>Implemented DenseNet121 with preprocessing and augmentation for MRI brain tumor classification.</p>
       </div>
-    </section>
-
-    <section class="fade-in-up">
-      <h2>Education</h2>
-      
-      <div class="glass-card education-card">
-        <div class="edu-title">Bachelor of Science in Computer Science and Engineering</div>
-        <div class="edu-year">Expected Graduation: 2026</div>
-        <div class="edu-subtitle">American International University-Bangladesh</div>
+      <div class="project-card">
+        <h3>Fake News Detection</h3>
+        <p>Zero-shot transformer models with ensemble and explainability for misinformation analysis.</p>
       </div>
-
-      <div class="glass-card education-card">
-        <div class="edu-title">Higher Secondary Certificate</div>
-        <div class="edu-year">Completed: 2020</div>
-        <div class="edu-subtitle">Abdul Kadir Molla City College, Narsingdi</div>
+      <div class="project-card">
+        <h3>Bangladeshi Ethnic Language NER</h3>
+        <p>Developed BiLSTM-CRF and CNN-based models for Named Entity Recognition in tribal languages.</p>
       </div>
+    </div>
+  </section>
 
-      <div class="glass-card education-card">
-        <div class="edu-title">Secondary School Certificate</div>
-        <div class="edu-year">Completed: 2018</div>
-        <div class="edu-subtitle">Kamalpur Hazi Jahir Uddin High School, Bhairab</div>
-      </div>
-    </section>
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Let’s connect and collaborate! Feel free to reach out:</p>
+    <ul>
+      <li>Email: <a href="mailto:sajin@example.com">sajin@example.com</a></li>
+      <li>LinkedIn: <a href="https://linkedin.com/in/sajinmahmud" target="_blank">linkedin.com/in/sajinmahmud</a></li>
+      <li>GitHub: <a href="https://github.com/sajinmahmud" target="_blank">github.com/sajinmahmud</a></li>
+    </ul>
+  </section>
 
-    <section class="fade-in-up">
-      <h2>Projects</h2>
-
-      <div class="glass-card project-card">
-        <div class="project-title">Zero-Shot Learning for Fake News Detection</div>
-        <div class="project-desc">Advanced machine learning approach utilizing zero-shot learning techniques to identify and combat misinformation across various domains without requiring extensive training data for each specific topic.</div>
-        <a href="https://github.com/sajin2002/Applying-Zero-Shot-for-Combating-Misinformation" class="crystal-btn">View on GitHub</a>
-      </div>
-
-      <div class="glass-card project-card">
-        <div class="project-title">Bangladesh Ethnic Language Recognition</div>
-        <div class="project-desc">Natural language processing system designed to recognize and classify various ethnic languages of Bangladesh, contributing to digital preservation of linguistic diversity and cultural heritage.</div>
-        <a href="https://github.com/sajin2002/Bangladesh-Ethnic-Language-Recognition" class="crystal-btn">View on GitHub</a>
-      </div>
-
-      <div class="glass-card project-card">
-        <div class="project-title">Library Management Web Application</div>
-        <div class="project-desc">Full-stack web application for library management featuring user authentication, book catalog management, reservation system, and administrative dashboard with modern responsive design.</div>
-        <a href="#" class="crystal-btn">View Project</a>
-      </div>
-
-      <div class="glass-card project-card">
-        <div class="project-title">Heart Rate Monitoring System (R)</div>
-        <div class="project-desc">Statistical analysis and visualization system built in R for heart rate monitoring data, featuring advanced data processing, trend analysis, and health insights generation.</div>
-        <a href="#" class="crystal-btn">View Project</a>
-      </div>
-    </section>
-
-    <section class="fade-in-up">
-      <h2>Technical Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3>Programming Languages</h3>
-          <ul class="skill-list">
-            <li>Python</li>
-            <li>Java</li>
-            <li>C#</li>
-            <li>C++</li>
-            <li>R</li>
-          </ul>
-        </div>
-        
-        <div class="skill-category">
-          <h3>Web Technologies</h3>
-          <ul class="skill-list">
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>PHP</li>
-            <li>JavaScript</li>
-          </ul>
-        </div>
-        
-        <div class="skill-category">
-          <h3>Tools & Platforms</h3>
-          <ul class="skill-list">
-            <li>Git & GitHub</li>
-            <li>GitLab</li>
-            <li>VS Code</li>
-            <li>NetBeans</li>
-            <li>Arduino IDE</li>
-          </ul>
-        </div>
-        
-        <div class="skill-category">
-          <h3>Data Science & ML</h3>
-          <ul class="skill-list">
-            <li>Natural Language Processing</li>
-            <li>Computer Vision</li>
-            <li>Knowledge Distillation</li>
-            <li>RStudio</li>
-            <li>Machine Learning</li>
-          </ul>
-        </div>
-        
-        <div class="skill-category">
-          <h3>Hardware & Embedded</h3>
-          <ul class="skill-list">
-            <li>Arduino UNO/Nano</li>
-            <li>Raspberry Pi</li>
-            <li>IoT Development</li>
-          </ul>
-        </div>
-        
-        <div class="skill-category">
-          <h3>Design & Graphics</h3>
-          <ul class="skill-list">
-            <li>Adobe Photoshop</li>
-            <li>Adobe Lightroom</li>
-            <li>Adobe Illustrator</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="fade-in-up">
-      <h2>Soft Skills & Languages</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3>Soft Skills</h3>
-          <ul class="skill-list">
-            <li>Effective Communication</li>
-            <li>Team Collaboration</li>
-            <li>Complex Problem Solving</li>
-            <li>Critical Thinking</li>
-            <li>Project Management</li>
-          </ul>
-        </div>
-        
-        <div class="skill-category">
-          <h3>Languages</h3>
-          <ul class="skill-list">
-            <li>Bengali (Native)</li>
-            <li>English (Intermediate)</li>
-            <li>Hindi (Conversational)</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="fade-in-up">
-      <h2>Contact</h2>
-      <div class="contact-info">
-        <p>
-          <strong>Email:</strong> [Your Email Here]<br />
-          <strong>Phone:</strong> [Your Number]<br />
-          <strong>Address:</strong> [Your Address]
-        </p>
-        
-        <div class="social-links">
-          <a href="#">LinkedIn</a>
-          <a href="#">Instagram</a>
-          <a href="#">Facebook</a>
-          <a href="#">Twitter</a>
-          <a href="#">Threads</a>
-          <a href="https://github.com/sajin2002">GitHub</a>
-        </div>
-        
-        <a href="Sajin_Mahmud_Arpon_CV.pdf" download class="crystal-btn">Download CV</a>
-      </div>
-    </section>
-  </div>
-
-  <footer>
-    <p>© 2025 Sajin Mahmud Arpon. Crafted with passion and precision.</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Sajin Mahmud. All rights reserved.</p>
   </footer>
 
-  <script>
-    // Intersection Observer for animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, observerOptions);
-
-    // Observe all elements with animation classes
-    document.querySelectorAll('.glass-card, .fade-in-up').forEach(el => {
-      observer.observe(el);
-    });
-
-    // Add staggered animation delays
-    const cards = document.querySelectorAll('.glass-card');
-    cards.forEach((card, index) => {
-      card.style.animationDelay = `${index * 0.1}s`;
-    });
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    // Parallax effect for background
-    window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      const parallax = document.querySelector('.bg-animation');
-      const speed = scrolled * 0.5;
-      parallax.style.transform = `translateY(${speed}px)`;
-    });
-  </script>
 </body>
 </html>
