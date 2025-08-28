@@ -1,197 +1,169 @@
-/* Basic Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* ======================
+   General Styles
+====================== */
 body {
+  margin: 0;
   font-family: 'Inter', sans-serif;
   background: #0f0f0f;
-  color: #fff;
-  line-height: 1.6;
+  color: #eee;
   overflow-x: hidden;
 }
 
-/* Background animation */
-.bg-animation {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #1a1a1a, #111, #222);
-  z-index: -1;
-  transition: transform 0.2s ease-out;
-}
-
-/* Header */
 header {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem 2rem 1rem;
+  z-index: 2;
+  position: relative;
 }
 
 header h1 {
   font-family: 'Freight Display Pro', serif;
   font-size: 3rem;
-  font-weight: 700;
-  color: #00d4ff;
+  margin-bottom: 0.5rem;
 }
 
 header p {
-  font-size: 1.3rem;
-  color: #b0b0b0;
-  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: #ccc;
 }
 
-/* Main container */
 .main-container {
+  width: 90%;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  margin: auto;
+  padding-bottom: 5rem;
 }
 
-/* About Section */
+/* ======================
+   About Section
+====================== */
 .about-section {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   align-items: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
-.profile-image-container {
-  flex: 1 1 250px;
-  display: flex;
-  justify-content: center;
-}
-
-.profile-image {
+.profile-image img {
   width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #00d4ff;
-  box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
-  transform: translateZ(0);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+  transition: transform 0.3s ease;
 }
 
-.profile-image:hover {
+.profile-image img:hover {
   transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 25px 50px rgba(0, 212, 255, 0.5);
 }
 
-.about-text-card {
-  flex: 2 1 500px;
-  font-size: 1.15rem;
-  padding: 2rem;
+.about-card {
+  flex: 1;
+  min-width: 300px;
 }
 
-/* Glass Card Style */
+/* ======================
+   Glass Card
+====================== */
 .glass-card {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 1rem;
-  backdrop-filter: blur(15px);
-  padding: 1.5rem 2rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  backdrop-filter: blur(12px);
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
 }
 
-.glass-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0,212,255,0.4);
+.glass-card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Education, Projects, Skills */
-h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #00d4ff;
-}
-
-.edu-title, .project-title {
-  font-weight: 600;
-  font-size: 1.3rem;
-  margin-bottom: 0.3rem;
-}
-
-.edu-year, .edu-subtitle, .project-desc {
-  font-size: 1.05rem;
-  color: #ccc;
-}
-
-.crystal-btn {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.6rem 1.5rem;
-  border-radius: 0.6rem;
-  border: 1px solid #00d4ff;
-  color: #00d4ff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.crystal-btn:hover {
-  background: #00d4ff;
-  color: #0f0f0f;
-  transform: translateY(-3px);
-}
-
-/* Skills Grid */
+/* ======================
+   Skills Grid
+====================== */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
 }
 
-.skill-category h3 {
-  font-size: 1.2rem;
-  color: #00d4ff;
-  margin-bottom: 0.5rem;
+/* ======================
+   Buttons
+====================== */
+.crystal-btn {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
 }
 
-.skill-list li {
-  font-size: 1rem;
-  margin-bottom: 0.3rem;
+.crystal-btn:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-3px);
 }
 
-/* Soft Skills & Languages same as skills grid */
-.contact-info {
-  font-size: 1.05rem;
-}
-
+/* ======================
+   Social Links
+====================== */
 .social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   margin: 1rem 0;
 }
 
 .social-links a {
-  margin-right: 1rem;
-  color: #00d4ff;
+  color: #fff;
   text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
   transition: all 0.3s ease;
 }
 
 .social-links a:hover {
-  color: #fff;
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-2px);
 }
 
-/* Footer */
+/* ======================
+   Footer
+====================== */
 footer {
   text-align: center;
-  padding: 2rem 1rem;
-  color: #999;
-  font-size: 0.95rem;
+  padding: 2rem;
+  color: #aaa;
+  font-size: 0.9rem;
 }
 
-/* Animations */
+/* ======================
+   Background Animation
+====================== */
+.bg-animation {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1c1c1c, #0f0f0f);
+  z-index: -1;
+  transition: transform 0.2s ease;
+}
+
+/* ======================
+   Fade-in Animation
+====================== */
 .fade-in-up {
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.6s ease-out;
+  transition: all 0.8s ease-out;
 }
 
 .fade-in-up.visible {
@@ -199,18 +171,16 @@ footer {
   transform: translateY(0);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
+/* ======================
+   Responsive
+====================== */
+@media screen and (max-width: 768px) {
   .about-section {
     flex-direction: column;
+    text-align: center;
   }
 
-  .profile-image {
-    width: 200px;
-    height: 200px;
-  }
-
-  .about-text-card {
-    font-size: 1rem;
+  .profile-image img {
+    margin: auto;
   }
 }
