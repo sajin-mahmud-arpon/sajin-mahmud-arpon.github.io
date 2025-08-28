@@ -85,7 +85,7 @@
       color: #000;
     }
 
-    .project-card {
+    .project-card, .education-card {
       background-color: white;
       border-left: 6px solid var(--accent);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -96,21 +96,27 @@
       transition: all 0.6s ease;
     }
 
-    .project-card.visible {
+    .project-card.visible, .education-card.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    .project-title {
+    .project-title, .edu-title {
       font-size: 1.4rem;
       color: var(--accent);
       margin-bottom: 0.5rem;
     }
 
-    .project-desc {
+    .project-desc, .edu-subtitle {
       font-size: 1rem;
       color: #333;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .edu-year {
+      font-size: 0.9rem;
+      color: var(--button);
+      margin-bottom: 0.5rem;
     }
 
     footer {
@@ -132,6 +138,26 @@
     <h2>About Me</h2>
     <p>I am currently in my 11th semester studying Computer Science and Engineering, majoring in Information Systems. I am actively seeking internship opportunities to apply my skills in real-world settings and grow as a developer and researcher.</p>
     <p>My passion lies in machine learning, natural language processing, and computer vision. I am working on multiple projects with the goal of presenting them at academic conferences. I thrive on solving complex problems and turning ideas into impactful solutions.</p>
+
+    <h2>Education</h2>
+
+    <div class="education-card">
+      <div class="edu-title">Bachelor of Science in Computer Science and Engineering</div>
+      <div class="edu-year">Expected Graduation: 2026</div>
+      <div class="edu-subtitle">American International University-Bangladesh</div>
+    </div>
+
+    <div class="education-card">
+      <div class="edu-title">Higher Secondary Certificate</div>
+      <div class="edu-year">Completed: 2020</div>
+      <div class="edu-subtitle">Abdul Kadir Molla City College, Narsingdi</div>
+    </div>
+
+    <div class="education-card">
+      <div class="edu-title">Secondary School Certificate</div>
+      <div class="edu-year">Completed: 2018</div>
+      <div class="edu-subtitle">Kamalpur Hazi Jahir Uddin High School, Bhairab</div>
+    </div>
 
     <h2>Projects</h2>
 
@@ -198,24 +224,4 @@
     </p>
 
     <h2>Download My CV</h2>
-    <a href="Sajin_Mahmud_Arpon_CV.pdf" download class="button">Download CV</a>
-  </section>
-
-  <footer>
-    <p>© 2025 Sajin Mahmud Arpon</p>
-  </footer>
-
-  <script>
-    const cards = document.querySelectorAll('.project-card');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    cards.forEach(card => observer.observe(card));
-  </script>
-</body>
-</html>
+    <a href="Sajin_M
