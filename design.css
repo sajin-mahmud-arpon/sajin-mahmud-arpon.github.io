@@ -1,147 +1,29 @@
 /* ======================
-   General Styles
+   Color Palette
 ====================== */
-body {
+:root {
+  --gunmetal: #022b3aff;
+  --teal: #1f7a8cff;
+  --columbia-blue: #bfdbf7ff;
+  --lavender-web: #e1e5f2ff;
+  --white: #ffffffff;
+}
+
+/* ======================
+   Global Styles
+====================== */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Inter', sans-serif;
-  background: #0f0f0f;
-  color: #eee;
+  color: var(--gunmetal);
+  line-height: 1.6;
+  background: var(--lavender-web);
   overflow-x: hidden;
-}
-
-header {
-  text-align: center;
-  padding: 3rem 1rem 2rem 1rem;
-  z-index: 2;
-  position: relative;
-}
-
-header h1 {
-  font-family: 'Freight Display Pro', serif;
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-header p {
-  font-size: 1.2rem;
-  color: #ccc;
-}
-
-.main-container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-  padding-bottom: 5rem;
-}
-
-/* ======================
-   About Section
-====================== */
-.about-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: center;
-  margin-bottom: 3rem;
-}
-
-.profile-image img {
-  width: 250px;
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
-  transition: transform 0.3s ease;
-}
-
-.profile-image img:hover {
-  transform: translateY(-10px) scale(1.05);
-}
-
-.about-card {
-  flex: 1;
-  min-width: 300px;
-}
-
-/* ======================
-   Glass Card
-====================== */
-.glass-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  padding: 2rem;
-  margin: 2rem 0;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-.glass-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ======================
-   Skills Grid
-====================== */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-}
-
-/* ======================
-   Buttons
-====================== */
-.crystal-btn {
-  display: inline-block;
-  padding: 0.6rem 1.4rem;
-  border-radius: 12px;
-  background: rgba(255,255,255,0.1);
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  margin-top: 1rem;
-}
-
-.crystal-btn:hover {
-  background: rgba(255,255,255,0.25);
-  transform: translateY(-3px);
-}
-
-/* ======================
-   Social Links
-====================== */
-.social-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 1rem 0;
-}
-
-.social-links a {
-  color: #fff;
-  text-decoration: none;
-  padding: 0.4rem 0.8rem;
-  background: rgba(255,255,255,0.05);
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-  background: rgba(255,255,255,0.25);
-  transform: translateY(-2px);
-}
-
-/* ======================
-   Footer
-====================== */
-footer {
-  text-align: center;
-  padding: 2rem;
-  color: #aaa;
-  font-size: 0.9rem;
 }
 
 /* ======================
@@ -152,35 +34,217 @@ footer {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #1c1c1c, #0f0f0f);
+  background: linear-gradient(135deg, #e1e5f2ff, #bfdbf7ff, #1f7a8cff, #022b3aff);
   z-index: -1;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
 }
 
 /* ======================
-   Fade-in Animation
+   Header
 ====================== */
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease-out;
+header {
+  text-align: center;
+  padding: 4rem 2rem 2rem 2rem;
 }
 
-.fade-in-up.visible {
+header h1 {
+  font-family: 'Freight Display Pro', serif;
+  font-weight: 700;
+  font-size: 3rem;
+  color: var(--gunmetal);
+}
+
+header p {
+  font-size: 1.3rem;
+  color: var(--teal);
+  margin-top: 0.5rem;
+}
+
+/* ======================
+   Main Container
+====================== */
+.main-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* ======================
+   Section Titles
+====================== */
+section h2 {
+  font-family: 'Freight Display Pro', serif;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--gunmetal);
+  text-align: left;
+}
+
+/* ======================
+   Glass Cards
+====================== */
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
+}
+
+.glass-card.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* ======================
-   Responsive
+   About Section with Image
 ====================== */
-@media screen and (max-width: 768px) {
-  .about-section {
-    flex-direction: column;
-    text-align: center;
-  }
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
 
-  .profile-image img {
-    margin: auto;
-  }
+.about-container img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+  transition: transform 0.5s ease;
+}
+
+.about-container img:hover {
+  transform: scale(1.05);
+}
+
+.about-container .about-text {
+  flex: 1;
+  font-size: 1.2rem;
+}
+
+/* ======================
+   Education Cards
+====================== */
+.education-card .edu-title {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--gunmetal);
+}
+
+.education-card .edu-year {
+  font-weight: 400;
+  color: var(--teal);
+  margin: 0.3rem 0;
+}
+
+.education-card .edu-subtitle {
+  font-style: italic;
+  color: var(--columbia-blue);
+}
+
+/* ======================
+   Projects Cards
+====================== */
+.project-card .project-title {
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--gunmetal);
+}
+
+.project-card .project-desc {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--gunmetal);
+}
+
+.crystal-btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  background: var(--teal);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.crystal-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(31, 122, 140, 0.4);
+}
+
+/* ======================
+   Skills Grid
+====================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-category h3 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--gunmetal);
+}
+
+.skill-list li {
+  list-style: none;
+  font-size: 1.1rem;
+  color: var(--gunmetal);
+  margin-bottom: 0.3rem;
+}
+
+/* ======================
+   Contact Section
+====================== */
+.contact-info p {
+  font-size: 1.1rem;
+  color: var(--gunmetal);
+  margin-bottom: 1rem;
+}
+
+.social-links a {
+  display: inline-block;
+  margin-right: 1rem;
+  color: var(--teal);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--gunmetal);
+}
+
+/* ======================
+   Footer
+====================== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--gunmetal);
+  font-size: 0.95rem;
+}
+
+/* ======================
+   Animations
+====================== */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
