@@ -7,23 +7,23 @@
   <title>Sajin Mahmud Arpon | Portfolio</title>
   <style>
     :root {
-      --dark-green: #002500;
-      --moss-green: #929982;
-      --desert-sand: #edcbb1;
-      --rose-red: #b7245c;
-      --wine: #7c3238;
+      --bg-light: #FDF5EC;
+      --highlight: #F5D649;
+      --accent: #419577;
+      --button: #F5AB41;
+      --text-dark: #002500;
     }
 
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: var(--desert-sand);
-      color: var(--dark-green);
+      background-color: var(--bg-light);
+      color: var(--text-dark);
     }
 
     header {
-      background-color: var(--dark-green);
-      color: var(--desert-sand);
+      background-color: var(--text-dark);
+      color: var(--bg-light);
       padding: 2rem;
       text-align: center;
     }
@@ -45,9 +45,9 @@
     }
 
     h2 {
-      color: var(--wine);
-      border-bottom: 2px solid var(--rose-red);
-      padding-bottom: 0.3rem;
+      color: var(--accent);
+      border-bottom: 2px solid var(--highlight);
+      padding-bottom: 0.5rem;
       margin-top: 2rem;
     }
 
@@ -61,7 +61,7 @@
     }
 
     a {
-      color: var(--rose-red);
+      color: var(--accent);
       text-decoration: none;
     }
 
@@ -71,8 +71,8 @@
 
     .button {
       display: inline-block;
-      background-color: var(--rose-red);
-      color: var(--desert-sand);
+      background-color: var(--button);
+      color: white;
       padding: 10px 20px;
       border-radius: 5px;
       text-decoration: none;
@@ -81,12 +81,41 @@
     }
 
     .button:hover {
-      background-color: var(--wine);
+      background-color: var(--highlight);
+      color: #000;
+    }
+
+    .project-card {
+      background-color: white;
+      border-left: 6px solid var(--accent);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease;
+    }
+
+    .project-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .project-title {
+      font-size: 1.4rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-desc {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 1rem;
     }
 
     footer {
-      background-color: var(--dark-green);
-      color: var(--desert-sand);
+      background-color: var(--text-dark);
+      color: var(--bg-light);
       text-align: center;
       padding: 1rem;
       margin-top: 2rem;
@@ -105,23 +134,30 @@
     <p>My passion lies in machine learning, natural language processing, and computer vision. I am working on multiple projects with the goal of presenting them at academic conferences. I thrive on solving complex problems and turning ideas into impactful solutions.</p>
 
     <h2>Projects</h2>
-    <ul>
-      <li><strong>Zero-Shot Learning for Fake News Detection</strong><br />
-        <a href="https://github.com/sajin2002/Applying-Zero-Shot-for-Combating-Misinformation">View on GitHub</a>
-      </li>
-      <li><strong>Bangladesh Ethnic Language Recognition</strong><br />
-        <a href="https://github.com/sajin2002/Bangladesh-Ethnic-Language-Recognition">View on GitHub</a>
-      </li>
-      <li><strong>Anyone For Tennis</strong><br />
-        <a href="#">Click here to view the file</a>
-      </li>
-      <li><strong>Library Web App</strong><br />
-        <a href="#">Click here to view the file</a>
-      </li>
-      <li><strong>Heart Rate Monitoring (R)</strong><br />
-        <a href="#">Click here to view the file</a>
-      </li>
-    </ul>
+
+    <div class="project-card">
+      <div class="project-title">Zero-Shot Learning for Fake News Detection</div>
+      <div class="project-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</div>
+      <a href="https://github.com/sajin2002/Applying-Zero-Shot-for-Combating-Misinformation" class="button">View on GitHub</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title">Bangladesh Ethnic Language Recognition</div>
+      <div class="project-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</div>
+      <a href="https://github.com/sajin2002/Bangladesh-Ethnic-Language-Recognition" class="button">View on GitHub</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title">Library Web App</div>
+      <div class="project-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</div>
+      <a href="#" class="button">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title">Heart Rate Monitoring (R)</div>
+      <div class="project-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</div>
+      <a href="#" class="button">View Project</a>
+    </div>
 
     <h2>Technical Skills</h2>
     <ul>
@@ -168,5 +204,18 @@
   <footer>
     <p>© 2025 Sajin Mahmud Arpon</p>
   </footer>
+
+  <script>
+    const cards = document.querySelectorAll('.project-card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
 </body>
 </html>
