@@ -5,122 +5,633 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Sajin Mahmud Arpon – CSE Student | Machine Learning | NLP | Computer Vision" />
   <title>Sajin Mahmud Arpon | Portfolio</title>
-  <link rel="stylesheet" href="design.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Freight+Display+Pro:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0F0F23;
+      --bg-secondary: #1A1A2E;
+      --bg-glass: rgba(255, 255, 255, 0.05);
+      --accent-primary: #00D4AA;
+      --accent-secondary: #FF6B6B;
+      --accent-gold: #FFD700;
+      --text-primary: #FFFFFF;
+      --text-secondary: #B8B8D1;
+      --text-muted: #8B8BA7;
+      --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-accent: linear-gradient(135deg, #00D4AA 0%, #00B4D8 100%);
+      --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.3);
+      --shadow-intense: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 18px;
+      overflow-x: hidden;
+    }
+
+    /* Animated background */
+    .bg-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: var(--bg-primary);
+    }
+
+    .bg-animation::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 25% 25%, rgba(0, 212, 170, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 75% 75%, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
+      animation: float 20s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(30px, -30px) rotate(120deg); }
+      66% { transform: translate(-20px, 20px) rotate(240deg); }
+    }
+
+    /* Header */
+    header {
+      position: relative;
+      background: var(--gradient-primary);
+      padding: 4rem 2rem;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="30" cy="25" r="0.3" fill="rgba(255,255,255,0.1)"/><circle cx="60" cy="15" r="0.4" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="35" r="0.2" fill="rgba(255,255,255,0.1)"/><circle cx="20" cy="50" r="0.3" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="60" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="0.2" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="70" r="0.4" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+    }
+
+    header h1 {
+      font-family: 'Freight Display Pro', serif;
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(45deg, #fff, #00D4AA);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: slideUp 1s ease-out;
+    }
+
+    header p {
+      font-size: 1.4rem;
+      font-weight: 300;
+      opacity: 0.9;
+      animation: slideUp 1s ease-out 0.2s both;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Main content */
+    .main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      margin: 4rem 0;
+    }
+
+    h2 {
+      font-family: 'Freight Display Pro', serif;
+      font-size: 3rem;
+      font-weight: 600;
+      color: var(--accent-primary);
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-accent);
+      border-radius: 2px;
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: expandLine 0.8s ease-out forwards;
+    }
+
+    @keyframes expandLine {
+      to { transform: scaleX(1); }
+    }
+
+    /* Glass morphism cards */
+    .glass-card {
+      background: var(--bg-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    .glass-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .glass-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-intense);
+      border-color: rgba(0, 212, 170, 0.3);
+    }
+
+    .project-title, .edu-title {
+      font-family: 'Freight Display Pro', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .project-desc, .edu-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .edu-year {
+      font-size: 1rem;
+      color: var(--accent-gold);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Crystal water buttons */
+    .crystal-btn {
+      position: relative;
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--text-primary);
+      background: linear-gradient(135deg, rgba(0, 212, 170, 0.2), rgba(0, 180, 216, 0.2));
+      border: 2px solid transparent;
+      border-radius: 50px;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+
+    .crystal-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .crystal-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(0, 212, 170, 0.4),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      border-color: rgba(0, 212, 170, 0.5);
+    }
+
+    .crystal-btn:hover::before {
+      left: 100%;
+    }
+
+    /* Skills section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .skill-category {
+      background: var(--bg-glass);
+      backdrop-filter: blur(15px);
+      border-radius: 15px;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .skill-category:hover {
+      border-color: rgba(0, 212, 170, 0.3);
+      transform: translateY(-5px);
+    }
+
+    .skill-category h3 {
+      font-family: 'Freight Display Pro', serif;
+      font-size: 1.5rem;
+      color: var(--accent-primary);
+      margin-bottom: 1rem;
+    }
+
+    .skill-list {
+      list-style: none;
+    }
+
+    .skill-list li {
+      padding: 0.8rem 0;
+      font-size: 1.1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .skill-list li:hover {
+      color: var(--accent-primary);
+      padding-left: 1rem;
+    }
+
+    .skill-list li:last-child {
+      border-bottom: none;
+    }
+
+    /* Contact section */
+    .contact-info {
+      background: var(--bg-glass);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 3rem;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .contact-info p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+    }
+
+    .social-links a {
+      padding: 0.8rem 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+      text-decoration: none;
+      color: var(--text-primary);
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+
+    .social-links a:hover {
+      background: var(--accent-primary);
+      color: var(--bg-primary);
+      transform: translateY(-3px);
+      border-color: var(--accent-primary);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-secondary);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      
+      header p {
+        font-size: 1.1rem;
+      }
+      
+      h2 {
+        font-size: 2.2rem;
+      }
+      
+      .main-container {
+        padding: 0 1rem;
+      }
+      
+      .glass-card {
+        padding: 1.5rem;
+      }
+      
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Scroll animations */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-secondary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent-primary);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-secondary);
+    }
+  </style>
 </head>
 <body>
+  <div class="bg-animation"></div>
+  
   <header>
     <h1>Sajin Mahmud Arpon</h1>
     <p>CSE Student | Machine Learning | NLP | Computer Vision</p>
   </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>I am currently in my 11th semester studying Computer Science and Engineering, majoring in Information Systems. I am actively seeking internship opportunities to apply my skills in real-world settings and grow as a developer and researcher.</p>
-    <p>My passion lies in machine learning, natural language processing, and computer vision. I am working on multiple projects with the goal of presenting them at academic conferences. I thrive on solving complex problems and turning ideas into impactful solutions.</p>
+  <div class="main-container">
+    <section class="fade-in-up">
+      <h2>About Me</h2>
+      <div class="glass-card">
+        <p>I am currently in my 11th semester studying Computer Science and Engineering, majoring in Information Systems. I am actively seeking internship opportunities to apply my skills in real-world settings and grow as a developer and researcher.</p>
+        <p>My passion lies in machine learning, natural language processing, and computer vision. I am working on multiple projects with the goal of presenting them at academic conferences. I thrive on solving complex problems and turning ideas into impactful solutions.</p>
+      </div>
+    </section>
 
-    <h2>Education</h2>
+    <section class="fade-in-up">
+      <h2>Education</h2>
+      
+      <div class="glass-card education-card">
+        <div class="edu-title">Bachelor of Science in Computer Science and Engineering</div>
+        <div class="edu-year">Expected Graduation: 2026</div>
+        <div class="edu-subtitle">American International University-Bangladesh</div>
+      </div>
 
-    <div class="education-card">
-      <div class="edu-title">Bachelor of Science in Computer Science and Engineering</div>
-      <div class="edu-year">Expected Graduation: 2026</div>
-      <div class="edu-subtitle">American International University-Bangladesh</div>
-    </div>
+      <div class="glass-card education-card">
+        <div class="edu-title">Higher Secondary Certificate</div>
+        <div class="edu-year">Completed: 2020</div>
+        <div class="edu-subtitle">Abdul Kadir Molla City College, Narsingdi</div>
+      </div>
 
-    <div class="education-card">
-      <div class="edu-title">Higher Secondary Certificate</div>
-      <div class="edu-year">Completed: 2020</div>
-      <div class="edu-subtitle">Abdul Kadir Molla City College, Narsingdi</div>
-    </div>
+      <div class="glass-card education-card">
+        <div class="edu-title">Secondary School Certificate</div>
+        <div class="edu-year">Completed: 2018</div>
+        <div class="edu-subtitle">Kamalpur Hazi Jahir Uddin High School, Bhairab</div>
+      </div>
+    </section>
 
-    <div class="education-card">
-      <div class="edu-title">Secondary School Certificate</div>
-      <div class="edu-year">Completed: 2018</div>
-      <div class="edu-subtitle">Kamalpur Hazi Jahir Uddin High School, Bhairab</div>
-    </div>
+    <section class="fade-in-up">
+      <h2>Projects</h2>
 
-    <h2>Projects</h2>
+      <div class="glass-card project-card">
+        <div class="project-title">Zero-Shot Learning for Fake News Detection</div>
+        <div class="project-desc">Advanced machine learning approach utilizing zero-shot learning techniques to identify and combat misinformation across various domains without requiring extensive training data for each specific topic.</div>
+        <a href="https://github.com/sajin2002/Applying-Zero-Shot-for-Combating-Misinformation" class="crystal-btn">View on GitHub</a>
+      </div>
 
-    <div class="project-card">
-      <div class="project-title">Zero-Shot Learning for Fake News Detection</div>
-      <div class="project-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</div>
-      <a href="https://github.com/sajin2002/Applying-Zero-Shot-for-Combating-Misinformation" class="button">View on GitHub</a>
-    </div>
+      <div class="glass-card project-card">
+        <div class="project-title">Bangladesh Ethnic Language Recognition</div>
+        <div class="project-desc">Natural language processing system designed to recognize and classify various ethnic languages of Bangladesh, contributing to digital preservation of linguistic diversity and cultural heritage.</div>
+        <a href="https://github.com/sajin2002/Bangladesh-Ethnic-Language-Recognition" class="crystal-btn">View on GitHub</a>
+      </div>
 
-    <div class="project-card">
-      <div class="project-title">Bangladesh Ethnic Language Recognition</div>
-      <div class="project-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</div>
-      <a href="https://github.com/sajin2002/Bangladesh-Ethnic-Language-Recognition" class="button">View on GitHub</a>
-    </div>
+      <div class="glass-card project-card">
+        <div class="project-title">Library Management Web Application</div>
+        <div class="project-desc">Full-stack web application for library management featuring user authentication, book catalog management, reservation system, and administrative dashboard with modern responsive design.</div>
+        <a href="#" class="crystal-btn">View Project</a>
+      </div>
 
-    <div class="project-card">
-      <div class="project-title">Library Web App</div>
-      <div class="project-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</div>
-      <a href="#" class="button">View Project</a>
-    </div>
+      <div class="glass-card project-card">
+        <div class="project-title">Heart Rate Monitoring System (R)</div>
+        <div class="project-desc">Statistical analysis and visualization system built in R for heart rate monitoring data, featuring advanced data processing, trend analysis, and health insights generation.</div>
+        <a href="#" class="crystal-btn">View Project</a>
+      </div>
+    </section>
 
-    <div class="project-card">
-      <div class="project-title">Heart Rate Monitoring (R)</div>
-      <div class="project-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</div>
-      <a href="#" class="button">View Project</a>
-    </div>
+    <section class="fade-in-up">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Programming Languages</h3>
+          <ul class="skill-list">
+            <li>Python</li>
+            <li>Java</li>
+            <li>C#</li>
+            <li>C++</li>
+            <li>R</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Web Technologies</h3>
+          <ul class="skill-list">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>PHP</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Tools & Platforms</h3>
+          <ul class="skill-list">
+            <li>Git & GitHub</li>
+            <li>GitLab</li>
+            <li>VS Code</li>
+            <li>NetBeans</li>
+            <li>Arduino IDE</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Data Science & ML</h3>
+          <ul class="skill-list">
+            <li>Natural Language Processing</li>
+            <li>Computer Vision</li>
+            <li>Knowledge Distillation</li>
+            <li>RStudio</li>
+            <li>Machine Learning</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Hardware & Embedded</h3>
+          <ul class="skill-list">
+            <li>Arduino UNO/Nano</li>
+            <li>Raspberry Pi</li>
+            <li>IoT Development</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Design & Graphics</h3>
+          <ul class="skill-list">
+            <li>Adobe Photoshop</li>
+            <li>Adobe Lightroom</li>
+            <li>Adobe Illustrator</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <h2>Technical Skills</h2>
-    <ul>
-      <li><strong>Programming:</strong> C#, Python, Java, R, C++</li>
-      <li><strong>Web:</strong> HTML5, CSS3, PHP</li>
-      <li><strong>Tools:</strong> Git, GitHub, GitLab, VS Code, NetBeans, Arduino IDE</li>
-      <li><strong>Embedded:</strong> Arduino UNO/Nano, Raspberry Pi</li>
-      <li><strong>Data Science:</strong> RStudio, Python, Knowledge Distillation, NLP, CV</li>
-      <li><strong>Graphics:</strong> Photoshop, Lightroom, Illustrator</li>
-    </ul>
+    <section class="fade-in-up">
+      <h2>Soft Skills & Languages</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Soft Skills</h3>
+          <ul class="skill-list">
+            <li>Effective Communication</li>
+            <li>Team Collaboration</li>
+            <li>Complex Problem Solving</li>
+            <li>Critical Thinking</li>
+            <li>Project Management</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Languages</h3>
+          <ul class="skill-list">
+            <li>Bengali (Native)</li>
+            <li>English (Intermediate)</li>
+            <li>Hindi (Conversational)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <h2>Soft Skills</h2>
-    <ul>
-      <li>Communication</li>
-      <li>Teamwork</li>
-      <li>Problem Solving</li>
-    </ul>
-
-    <h2>Languages</h2>
-    <ul>
-      <li>Bengali (Native)</li>
-      <li>English (Intermediate)</li>
-      <li>Hindi (Conversational)</li>
-    </ul>
-
-    <h2>Contact</h2>
-    <p>
-      <strong>Email:</strong> [Your Email Here]<br />
-      <strong>Phone:</strong> [Your Number]<br />
-      <strong>Address:</strong> [Your Address]<br />
-      <strong>Socials:</strong><br />
-      <a href="#">LinkedIn</a> |
-      <a href="#">Instagram</a> |
-      <a href="#">Facebook</a> |
-      <a href="#">Twitter</a> |
-      <a href="#">Threads</a> |
-      <a href="https://github.com/sajin2002">GitHub</a>
-    </p>
-
-    <h2>Download My CV</h2>
-    <a href="Sajin_Mahmud_Arpon_CV.pdf" download class="button">Download CV</a>
-  </section>
+    <section class="fade-in-up">
+      <h2>Contact</h2>
+      <div class="contact-info">
+        <p>
+          <strong>Email:</strong> [Your Email Here]<br />
+          <strong>Phone:</strong> [Your Number]<br />
+          <strong>Address:</strong> [Your Address]
+        </p>
+        
+        <div class="social-links">
+          <a href="#">LinkedIn</a>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Threads</a>
+          <a href="https://github.com/sajin2002">GitHub</a>
+        </div>
+        
+        <a href="Sajin_Mahmud_Arpon_CV.pdf" download class="crystal-btn">Download CV</a>
+      </div>
+    </section>
+  </div>
 
   <footer>
-    <p>© 2025 Sajin Mahmud Arpon</p>
+    <p>© 2025 Sajin Mahmud Arpon. Crafted with passion and precision.</p>
   </footer>
 
   <script>
-    const observer = new IntersectionObserver(entries => {
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
       });
-    }, { threshold: 0.1 });
+    }, observerOptions);
 
-    document.querySelectorAll('.project-card, .education-card').forEach(card => {
-      observer.observe(card);
+    // Observe all elements with animation classes
+    document.querySelectorAll('.glass-card, .fade-in-up').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Add staggered animation delays
+    const cards = document.querySelectorAll('.glass-card');
+    cards.forEach((card, index) => {
+      card.style.animationDelay = `${index * 0.1}s`;
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Parallax effect for background
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const parallax = document.querySelector('.bg-animation');
+      const speed = scrolled * 0.5;
+      parallax.style.transform = `translateY(${speed}px)`;
     });
   </script>
 </body>
