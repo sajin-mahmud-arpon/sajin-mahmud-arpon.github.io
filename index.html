@@ -9,28 +9,31 @@
   <link rel="stylesheet" href="design.css" />
 </head>
 <body>
-  <!-- Particle Background -->
-  <canvas id="particle-canvas"></canvas>
+  <!-- Background animation -->
+  <div class="bg-animation"></div>
   
-  <!-- Profile Image -->
-  <div class="profile-image-container fade-in-up">
-    <img src="sajin-mahmud-arpon.jpg" alt="Sajin Mahmud Arpon" class="profile-image">
-  </div>
-
-  <header class="fade-in-up">
+  <header>
     <h1>Sajin Mahmud Arpon</h1>
     <p>CSE Student | Machine Learning | NLP | Computer Vision</p>
   </header>
 
   <div class="main-container">
-    <section class="fade-in-up">
-      <h2>About Me</h2>
-      <div class="glass-card">
-        <p>I am currently in my 11th semester studying Computer Science and Engineering, majoring in Information Systems. I am actively seeking internship opportunities to apply my skills in real-world settings and grow as a developer and researcher.</p>
-        <p>My passion lies in machine learning, natural language processing, and computer vision. I am working on multiple projects with the goal of presenting them at academic conferences. I thrive on solving complex problems and turning ideas into impactful solutions.</p>
+    <section class="fade-in-up about-section">
+      <div class="about-content">
+        <!-- Profile Image -->
+        <div class="profile-image-container">
+          <img src="sajin-mahmud-arpon.jpg" alt="Sajin Mahmud Arpon" class="profile-image">
+        </div>
+        
+        <!-- About Text -->
+        <div class="glass-card about-text-card">
+          <p>I am currently in my 11th semester studying Computer Science and Engineering, majoring in Information Systems. I am actively seeking internship opportunities to apply my skills in real-world settings and grow as a developer and researcher.</p>
+          <p>My passion lies in machine learning, natural language processing, and computer vision. I am working on multiple projects with the goal of presenting them at academic conferences. I thrive on solving complex problems and turning ideas into impactful solutions.</p>
+        </div>
       </div>
     </section>
 
+    <!-- Education Section -->
     <section class="fade-in-up">
       <h2>Education</h2>
       <div class="glass-card education-card">
@@ -38,11 +41,13 @@
         <div class="edu-year">Expected Graduation: 2026</div>
         <div class="edu-subtitle">American International University-Bangladesh</div>
       </div>
+
       <div class="glass-card education-card">
         <div class="edu-title">Higher Secondary Certificate</div>
         <div class="edu-year">Completed: 2020</div>
         <div class="edu-subtitle">Abdul Kadir Molla City College, Narsingdi</div>
       </div>
+
       <div class="glass-card education-card">
         <div class="edu-title">Secondary School Certificate</div>
         <div class="edu-year">Completed: 2018</div>
@@ -50,23 +55,28 @@
       </div>
     </section>
 
+    <!-- Projects Section -->
     <section class="fade-in-up">
       <h2>Projects</h2>
+
       <div class="glass-card project-card">
         <div class="project-title">Zero-Shot Learning for Fake News Detection</div>
         <div class="project-desc">Advanced machine learning approach utilizing zero-shot learning techniques to identify and combat misinformation across various domains without requiring extensive training data for each specific topic.</div>
         <a href="https://github.com/sajin2002/Applying-Zero-Shot-for-Combating-Misinformation" class="crystal-btn">View on GitHub</a>
       </div>
+
       <div class="glass-card project-card">
         <div class="project-title">Bangladesh Ethnic Language Recognition</div>
         <div class="project-desc">Natural language processing system designed to recognize and classify various ethnic languages of Bangladesh, contributing to digital preservation of linguistic diversity and cultural heritage.</div>
         <a href="https://github.com/sajin2002/Bangladesh-Ethnic-Language-Recognition" class="crystal-btn">View on GitHub</a>
       </div>
+
       <div class="glass-card project-card">
         <div class="project-title">Library Management Web Application</div>
         <div class="project-desc">Full-stack web application for library management featuring user authentication, book catalog management, reservation system, and administrative dashboard with modern responsive design.</div>
         <a href="#" class="crystal-btn">View Project</a>
       </div>
+
       <div class="glass-card project-card">
         <div class="project-title">Heart Rate Monitoring System (R)</div>
         <div class="project-desc">Statistical analysis and visualization system built in R for heart rate monitoring data, featuring advanced data processing, trend analysis, and health insights generation.</div>
@@ -74,6 +84,7 @@
       </div>
     </section>
 
+    <!-- Skills Section -->
     <section class="fade-in-up">
       <h2>Technical Skills</h2>
       <div class="skills-grid">
@@ -87,6 +98,7 @@
             <li>R</li>
           </ul>
         </div>
+        
         <div class="skill-category">
           <h3>Web Technologies</h3>
           <ul class="skill-list">
@@ -96,6 +108,7 @@
             <li>JavaScript</li>
           </ul>
         </div>
+        
         <div class="skill-category">
           <h3>Tools & Platforms</h3>
           <ul class="skill-list">
@@ -106,6 +119,7 @@
             <li>Arduino IDE</li>
           </ul>
         </div>
+        
         <div class="skill-category">
           <h3>Data Science & ML</h3>
           <ul class="skill-list">
@@ -116,6 +130,7 @@
             <li>Machine Learning</li>
           </ul>
         </div>
+        
         <div class="skill-category">
           <h3>Hardware & Embedded</h3>
           <ul class="skill-list">
@@ -124,6 +139,7 @@
             <li>IoT Development</li>
           </ul>
         </div>
+        
         <div class="skill-category">
           <h3>Design & Graphics</h3>
           <ul class="skill-list">
@@ -135,30 +151,7 @@
       </div>
     </section>
 
-    <section class="fade-in-up">
-      <h2>Soft Skills & Languages</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3>Soft Skills</h3>
-          <ul class="skill-list">
-            <li>Effective Communication</li>
-            <li>Team Collaboration</li>
-            <li>Complex Problem Solving</li>
-            <li>Critical Thinking</li>
-            <li>Project Management</li>
-          </ul>
-        </div>
-        <div class="skill-category">
-          <h3>Languages</h3>
-          <ul class="skill-list">
-            <li>Bengali (Native)</li>
-            <li>English (Intermediate)</li>
-            <li>Hindi (Conversational)</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
+    <!-- Contact Section -->
     <section class="fade-in-up">
       <h2>Contact</h2>
       <div class="contact-info">
@@ -167,6 +160,7 @@
           <strong>Phone:</strong> [Your Number]<br />
           <strong>Address:</strong> [Your Address]
         </p>
+        
         <div class="social-links">
           <a href="#">LinkedIn</a>
           <a href="#">Instagram</a>
@@ -175,6 +169,7 @@
           <a href="#">Threads</a>
           <a href="https://github.com/sajin2002">GitHub</a>
         </div>
+        
         <a href="Sajin_Mahmud_Arpon_CV.pdf" download class="crystal-btn">Download CV</a>
       </div>
     </section>
@@ -184,7 +179,33 @@
     <p>© 2025 Sajin Mahmud Arpon. Crafted with passion and precision.</p>
   </footer>
 
-  <!-- JS Animations -->
-  <script src="script.js"></script>
+  <script>
+    // Intersection Observer for animations
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if(entry.isIntersecting){entry.target.classList.add('visible');} });
+    }, observerOptions);
+
+    document.querySelectorAll('.glass-card, .fade-in-up').forEach(el => observer.observe(el));
+
+    const cards = document.querySelectorAll('.glass-card');
+    cards.forEach((card,index)=>{card.style.animationDelay=`${index*0.12}s`;});
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+      anchor.addEventListener('click', e=>{
+        e.preventDefault();
+        const target=document.querySelector(anchor.getAttribute('href'));
+        if(target){target.scrollIntoView({behavior:'smooth',block:'start'});}
+      });
+    });
+
+    // Parallax
+    window.addEventListener('scroll',()=>{
+      const scrolled=window.pageYOffset;
+      const parallax=document.querySelector('.bg-animation');
+      if(parallax) parallax.style.transform=`translateY(${scrolled*0.5}px)`;
+    });
+  </script>
 </body>
 </html>
