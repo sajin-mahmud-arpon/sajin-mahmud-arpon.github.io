@@ -32,7 +32,7 @@ const canvas = document.getElementById('particle-canvas');
 const ctx = canvas.getContext('2d');
 let stars = [];
 let meteors = [];
-let planets = [];
+//let planets = [];
 
 function resizeCanvas() {
     canvas.width = window.innerWidth;
@@ -67,31 +67,41 @@ class Star {
 
 // ===== Meteor Class =====
 class Meteor {
-    constructor() { this.reset(); }
+    constructor() {
+        this.reset();
+    }
+
     reset() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * -canvas.height;
-        this.length = Math.random() * 80 + 50;
-        this.speed = Math.random() * 10 + 6;
-        this.angle = Math.PI / 4;
+        this.length = Math.random() * 80 + 30;
+        this.speed = (Math.random() * 6 + 4) * (80 / this.length);
+        this.angle = Math.PI / 4 + (Math.random() - 0.5) * 0.2;
         this.opacity = Math.random() * 0.5 + 0.5;
+        this.color = `rgba(255,255,255,${this.opacity})`;
+        this.tailLength = this.length * (0.5 + Math.random() * 0.5);
     }
+
     update() {
         this.x += this.speed * Math.cos(this.angle);
         this.y += this.speed * Math.sin(this.angle);
         if (this.y > canvas.height || this.x > canvas.width) this.reset();
     }
+
     draw() {
         ctx.save();
-        ctx.strokeStyle = `rgba(255,255,255,${this.opacity})`;
+        ctx.strokeStyle = this.color;
         ctx.lineWidth = 2;
+        ctx.shadowColor = "white";
+        ctx.shadowBlur = 8; // glow effect
         ctx.beginPath();
         ctx.moveTo(this.x, this.y);
-        ctx.lineTo(this.x - this.length * Math.cos(this.angle), this.y - this.length * Math.sin(this.angle));
+        ctx.lineTo(this.x - this.tailLength * Math.cos(this.angle), this.y - this.tailLength * Math.sin(this.angle));
         ctx.stroke();
         ctx.restore();
     }
 }
+
 
 // ===== Planet Class =====
 class Planet {
@@ -127,11 +137,11 @@ class Planet {
 function initNightSky() {
     stars = [];
     meteors = [];
-    planets = [];
+    //planets = [];
 
     for (let i = 0; i < 150; i++) stars.push(new Star());
     for (let i = 0; i < 5; i++) meteors.push(new Meteor());
-    for (let i = 0; i < 3; i++) planets.push(new Planet());
+    //for (let i = 0; i < 3; i++) planets.push(new Planet());
 }
 initNightSky();
 
@@ -142,7 +152,7 @@ function animateNightSky() {
 
     stars.forEach(s => { s.update(); s.draw(); });
     meteors.forEach(m => { m.update(); m.draw(); });
-    planets.forEach(p => { p.update(); p.draw(); });
+    //planets.forEach(p => { p.update(); p.draw(); });
 
     requestAnimationFrame(animateNightSky);
 }
