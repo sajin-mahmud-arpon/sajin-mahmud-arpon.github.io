@@ -1,3 +1,7 @@
+html {
+    color-scheme: dark;
+}
+
 :root {
     --beige: #F4F1DE;
     --offwhite: #F7F7FF;
